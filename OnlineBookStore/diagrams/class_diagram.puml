@@ -1,0 +1,28 @@
+@startuml
+
+class Book {
+  - title : String
+  - author : String
+  - stock : int
+  + getTitle() : String
+  + purchase() : boolean
+}
+
+class Cart {
+  - books : List<Book>
+  + addBook(book: Book) : void
+  + viewCart() : void
+  + getBooks() : List<Book>
+}
+
+class User {
+  - username : String
+  - cart : Cart
+  + getUsername() : String
+  + getCart() : Cart
+}
+
+User --> Cart
+Cart --> Book
+
+@enduml
